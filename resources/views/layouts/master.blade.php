@@ -128,7 +128,7 @@
                                 <ul class="list-unstyled " id="child-list">
                                     @forelse ($childrens as $children)
                                     <li id="hover-effect">
-                                    <a href="#" class="waves-effect"><img src="img/logo.png" height="40" width="40">{{$children->first_name}} {{$children->last_name}}</a>
+                                    <a href="#" class="waves-effect"><img src="{{'img/'.$children->image}}" height="40" width="40">{{$children->first_name}} {{$children->last_name}}</a>
                                     </li>
                                     @empty
                                     @endforelse
