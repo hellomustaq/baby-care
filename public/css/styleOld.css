@@ -1,0 +1,225 @@
+/*back to top*/
+.totop {
+    position: fixed;
+    bottom: 86px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+    background: #a05b7e;
+    color: #fff;
+    border-radius: 25px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 30px;
+    font-size: 18px;
+}
+/*back to top*/
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* navbar */
+.navbar-area{
+   background:#58a55b;;
+   /* background:rgba(11, 130, 224, 0.22);*/
+   /*height: 66px;*/
+   color: #ebf0f3;
+   
+}
+
+.navbar-area img{
+    width: 70px;
+    height: 70px;
+}
+.navbar-area .navbar-dark .navbar-nav .nav-link {
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.navbar-area .navbar-dark .navbar-nav .nav-link:hover {
+    color: #FFFF;
+    background: #0f9ee0;
+    font-size:20px;
+    border-bottom: 1px solid white;
+    
+}
+
+/*slider*/
+.slider-area{
+    background: url(../img/d.jpg);
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+.carousel-item{
+    padding: 180px 0px;
+}
+.carousel-item h3{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.carousel-item h2{
+    font-size: 100px;
+    border: 1px solid #fff;
+    max-width: 670px;
+    margin: auto;
+}
+.carousel-item h2 span{
+   color: #005bff;
+    font: bold 68px Helvetica, Arial, Sans-Serif;
+    text-shadow: 1px 1px #0878f9, 2px 2px #eef2f9, 3px 3px #fff;
+}
+
+.carousel-item h4{
+    margin-top: 10px;
+    font-size: 36px;
+}
+.slider-area-overly{
+    background: rgba(0,0,0, .3);
+}
+.carousel-indicators li {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: #fff;
+}
+.carousel-indicators .active {
+    background-color: #005bff;
+}
+
+@media (min-width:992px) and (max-width:1199px){
+    /*navbar */
+    .navbar-area .navbar-dark .navbar-nav .nav-link {
+        text-transform: uppercase;
+        padding: 0px 0px 0px 14px;
+        font-size: 18px;
+       
+    }
+}
+
+@media (min-width:768px) and (max-width:991px){
+    /*navbar */
+    .navbar-area .navbar-dark .navbar-nav .nav-link {
+        text-transform: uppercase;
+        padding: 0px 0px 0px 10px;
+        font-size: 12px;
+        
+    }
+
+    /*slider */
+    .carousel-item{
+        padding: 120px 0px;
+    }
+}
+
+@media (min-width:500px) and (max-width:767px){
+    /*navbar*/
+    .navbar-area img{
+        width: 140px;
+        height: 60px;
+    }
+    .navbar-area .navbar-dark .navbar-nav .nav-link {
+        background: rgba(0,0,0, .5);
+        text-transform: uppercase;
+        padding: 0px 0px 10px 0px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .navbar-area .navbar-dark .navbar-toggler {
+        margin-top: 20px;
+    }
+    /*slider */
+    .carousel-item{
+        padding: 150px 0px 80px 0px;
+    }
+    .carousel-item h3{
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .carousel-item h2{
+        font-size: 60px;
+        border: 1px solid #fff;
+        max-width: 420px;
+        margin: auto;
+    }
+    .carousel-item h4{
+        font-size: 26px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:499px){
+    .navbar-area img{
+        width: 140px;
+        height: 60px;
+    }
+    .navbar-area .navbar-dark .navbar-nav .nav-link {
+        background: rgba(0,0,0, .5);
+        text-transform: uppercase;
+        padding: 0px 0px 10px 0px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .navbar-area .navbar-dark .navbar-toggler {
+        margin-top: 20px;
+    }
+    /*slider */
+    .carousel-item{
+        padding: 130px 0px 80px 0px;
+    }
+    .carousel-item h3{
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    .carousel-item h2{
+        font-size: 40px;
+        border: 1px solid #fff;
+        max-width: 420px;
+        margin: auto;
+    }
+    .carousel-item h4{
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    }
+
+    /*contact area*/
+.contact-top{
+    padding: 100px 0px 40px 0px;
+}
+.contact-top h2{
+    font-size: 36px;
+    text-transform: uppercase;
+}
+.contact-top p{
+    max-width: 700px;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: justify;
+    margin: auto;
+    
+}
+
+.contact-bottom i{
+    padding-bottom: 20px;
+}
+.contact-bottom h2{
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.contact-bottom p{
+    font-size: 14px;
+    line-height: 20px;
+    
+}
+.contact-bottom{
+    padding: 0px 0px 60px 0px;
+}
+.contact-content-hover:hover i,
+.contact-content-hover:hover h2{
+    color:#87d37c;
+    cursor: pointer;
+}
+
+/*contact area*/

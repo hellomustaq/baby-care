@@ -1,0 +1,133 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+/*back to top*/
+.totop {
+    position: fixed;
+    bottom: 86px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+    background: rgba(17, 194, 150, 0.5);
+    color: #fff;
+    border-radius: 25px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 30px;
+    font-size: 18px;
+}
+/*back to top*/
+.help{
+position: fixed;
+height: 40px;
+line-height:100%;
+bottom: 0%;
+width: 100px;
+background:rgba(17, 194, 150, .5);
+border-radius:10px;
+color: white;
+text-align: center;
+padding: 10px;
+left:0%;
+}
+
+.totop:hover, .help:hover{
+  background:rgba(17, 194, 150, 1.0);
+}
+.navbar-area{
+background:#58a55b;
+}
+.navbar-area img{
+    width: 100px;
+    height:30px;
+    
+}
+.nav-link{
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #fff;
+  transition: color .45s ease-in-out,
+  background-color .45s ease-in-out,
+  border-color.45s ease-in-out,
+  box-shadow .45s ease-in-out;
+  }
+  .nav-item{
+color: #fff;
+  }
+
+.nav-link:hover {
+   color: #fff;
+    background: #28a745;
+    border-bottom: 1px solid white;
+    
+}
+
+
+
+@media (min-width:992px) and (max-width:1199px){
+
+    .nav-link {
+        text-transform: uppercase;
+        padding: 0px 0px 0px 14px;
+        font-size: 18px;
+       
+    }
+}
+
+media (min-width:768px) and (max-width:991px){
+    .nav-link {
+        text-transform: uppercase;
+        padding: 6px 11px 11px 6px;
+        font-size: 19px;
+        
+    }
+}
+
+@media (min-width:500px) and (max-width:767px){
+    
+    .navbar-area img{
+        width: 100px;
+        height: 30px;
+    }
+     .nav-link {
+        text-transform: uppercase;
+        padding: 5px 10px 10px 5px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    }
+
+    @media (min-width:350px) and (max-width:499px){
+    .navbar-area img{
+        width: 80px;
+        height: 30px;
+    }
+     .nav-link {
+        text-transform: uppercase;
+       padding: 8px 0px 10px 6px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+     .nav-content{
+        padding: 1px;
+      }
+     
+    }
+  @media (min-width:320px) and (max-width:349px){
+         .navbar-area img{
+        width: 70px;
+        height: 30px;
+    }
+     .nav-link {
+        text-transform: uppercase;
+       padding: 8px 3px 10px 4px;
+        font-size: 13px;
+        font-weight: bold;
+      }
+     .nav-content{
+        padding: 0px;
+      }
+}
