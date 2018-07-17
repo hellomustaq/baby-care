@@ -60,9 +60,9 @@
             margin: 80px 0px;
         }
     </style>
-    <link href="metarial/css/mdb.min.css" rel="stylesheet">
+    <link href="{{asset('metarial/css/mdb.min.css')}}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="metarial/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('metarial/bootstrap.min.css')}}" rel="stylesheet">
 </head>
 
 <body class="fixed-sn white-skin">
@@ -128,7 +128,7 @@
                                 <ul class="list-unstyled " id="child-list">
                                     @forelse ($childrens as $children)
                                     <li id="hover-effect">
-                                    <a href="#" class="waves-effect"><img src="{{'img/'.$children->image}}" height="40" width="40">{{$children->first_name}} {{$children->last_name}}</a>
+                                    <a href="{{route('childrenProfile',['id' =>$children->id])}}" class="waves-effect"><img src="{{'img/'.$children->image}}" height="40" width="40">{{$children->first_name}} {{$children->last_name}}</a>
                                     </li>
                                     @empty
                                     @endforelse
@@ -266,7 +266,7 @@
             <div class="row"><p></p></div>
                 <div class="card-deck">
                         <div class="card">
-                          <img class="card-img-top" src="metarial/img/2.jpg" alt="Card image cap">
+                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
                           <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -276,7 +276,7 @@
                           </div>
                         </div>
                         <div class="card">
-                          <img class="card-img-top" src="metarial/img/2.jpg" alt="Card image cap">
+                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
                           <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -286,7 +286,7 @@
                           </div>
                         </div>
                         <div class="card">
-                          <img class="card-img-top" src="metarial/img/2.jpg" alt="Card image cap">
+                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
                           <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -441,11 +441,11 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="metarial/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{{asset('metarial/js/jquery-3.2.1.min.js')}}"></script>
     
 
     <!-- Tooltips -->
-    <script type="text/javascript" src="metarial/js/popper.min.js"></script>
+    <script type="text/javascript" src="{{asset('metarial/js/popper.min.js')}}"></script>
 
     <!-- Bootstrap core JavaScript -->
     {{--
@@ -454,7 +454,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="metarial/js/mdb.min.js"></script>
+    <script type="text/javascript" src="{{asset('metarial/js/mdb.min.js')}}"></script>
     <script>
         // SideNav Initialization
         $(".button-collapse").sideNav();

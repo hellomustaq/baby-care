@@ -1,11 +1,10 @@
 <?php
+//namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Validator;
 use App\Children;
 use App\Token;
 use App\User;
-use Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +30,12 @@ Route::get('addChildren',function(){
     $child=User::find($userId);$childrens=$child->childern;
     return view('users.addChildren')->with('childrens',$childrens);
 })->name('addChildren');
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('children/{id}', 'ChildrenController@profile')->name('childrenProfile');
+   
+  });
+
 Route::post('/children/add','UserController@insertChildren')->name('insertChildren')->middleware('auth');
 
 Auth::routes();
