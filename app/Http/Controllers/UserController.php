@@ -13,17 +13,25 @@ class UserController extends Controller
     public function insertChildren(Request $request){
         
         $validator =Validator::make($request->all(), [
+            'token' =>'required',
             'firstName' => 'required',
             'lastName' => 'required',
             'gender' => 'required',
             'birthday' => 'required',
-            'image' =>  'required',
+            'image' =>  'required | mimes:jpeg,jpg,png | max:5200',
         ]);
         
         if ($validator->fails()) {
             $initialError="Ohh!! Some field's data missing!!";
             return redirect()->back()
                         ->withInput($request->all())->withErrors($initialError);
+        }
+        if (!empty($request->input('token'))) {
+            $token=$request->input('token');
+            $originToken=Token::where('token','=','$token')->where('use','=','0')->count();
+            if ($originToken > 0) {
+                echo "valid"; die;
+            }
         }
 
         if ($request->hasFile('image')) {

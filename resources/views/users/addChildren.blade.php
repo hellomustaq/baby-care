@@ -39,6 +39,11 @@
         color: #2DAE60;
         font-weight: bolder;
     }
+    .red-indicator{
+        font-weight: bolder;
+        color: red;
+        font-size:large;
+    }
 
     @media (min-width:300px) and (max-width:400px) {
 
@@ -90,22 +95,27 @@
                     </div>
             @endif
             <div class="form-group ml-4 mr-4">
+                <label for="token">Token<span class="red-indicator">*</span></label>
+                <input name="token" type="text" class="form-control" id="token">
+            </div>
+
+            <div class="form-group ml-4 mr-4">
 
                 <div class="row">
 
                     <div class="col-6">
-                        <label for="firstName">First Name*</label>
+                        <label for="firstName">First Name<span class="red-indicator">*</span></label>
                         <input value="{{ old('firstName') }}" name="firstName" type="text" class="form-control" id="first" placeholder="First Name">
                     </div>
 
                     <div class="col-6">
-                        <label for="lastName">Last Name*</label>
+                        <label for="lastName">Last Name<span class="red-indicator">*</span></label>
                         <input value="{{ old('lastName') }}" name="lastName" type="text" class="form-control" id="last" placeholder="Last Name">
                     </div>
                 </div>
             </div>
             <!-- Group of material radios - option 1 -->
-            <label for="">Gender*</label>
+            <label for="">Gender<span class="red-indicator">*</span></label>
             <div class="form-check">
                     
                 <input type="radio" value="male" class="form-check-input" id="radio1" name="gender">
@@ -125,13 +135,13 @@
 
 
             <div class="form-group ml-4 mr-4">
-                <label for="Birthday">Birthday*</label>
+                <label for="Birthday">Birthday<span class="red-indicator">*</span></label>
                 <input name="birthday" type="date" class="form-control" id="birthday">
             </div>
 
 
             <div class="form-group ml-4 mr-4">
-                <label for="image">Profile Image*</label>
+                <label for="image">Profile Image<span class="red-indicator">*</span></label>
                 <input type="file" name="image" class="form-control" id="image">
                 <h6 style="color:red;">**Maximum file size 5MB</h6>
             </div>
