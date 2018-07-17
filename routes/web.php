@@ -1,5 +1,12 @@
 <?php
 
+use Illuminate\Http\Request;
+use Validator;
+use App\Children;
+use App\Token;
+use App\User;
+use Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +27,9 @@ Route::get('landing',function(){
 });
 
 Route::get('addChildren',function(){
-    return view('users.addChildren');
+    $userId=Auth::user()->id;
+    $child=User::find($userId);$childrens=$child->childern();
+    return view('users.addChildren')->with('childrens',$childrens);
 })->name('addChildren');
 Route::post('/children/add','UserController@insertChildren')->name('insertChildren')->middleware('auth');
 

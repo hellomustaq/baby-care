@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Children;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -25,8 +26,14 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('layouts.master');
+    {   
+        $userId=Auth::user()->id;
+        $child=User::find($userId);
+        $childrens=$child->childern;
+        // foreach ($childrens as $key) {
+        //     echo $key->first_name;
+        // }die;
+        return view('layouts.master')->with('childrens',$childrens);
     }
 
     public function regUser(Request $request){

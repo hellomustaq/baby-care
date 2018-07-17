@@ -126,12 +126,12 @@
                             </a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled " id="child-list">
+                                    @forelse ($childrens as $children)
                                     <li id="hover-effect">
-                                        <a href="#" class="waves-effect"><img src="img/logo.png" height="40" width="40">Abrar Ahmed</a>
+                                    <a href="#" class="waves-effect"><img src="img/logo.png" height="40" width="40">{{$children->first_name}} {{$children->last_name}}</a>
                                     </li>
-                                    <li id="hover-effect">
-                                        <a href="#" class="waves-effect"><img src="img/logo.png" height="40" width="40">Rehnuma Ahmed</a>
-                                    </li>
+                                    @empty
+                                    @endforelse
                                     <li id="hover-effect">
                                     <a href="{{route('addChildren')}}" class="waves-effect"><i class="fa fa-plus"></i> Add Child</a>
                                     </li>
