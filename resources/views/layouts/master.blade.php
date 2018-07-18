@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
     <!-- Scripts -->
-
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+    @yield('link')
     @yield('style')
     <style>
         @media (max-height: 992px) {
@@ -76,7 +77,7 @@
                 <li>
                     <div class="logo-wrapper waves-light">
                         <a href="#">
-                            <img src="img/logo.png" class="img-fluid flex-center">
+                            <img src="{{asset('img/logo.png')}}" class="img-fluid flex-center">
                         </a>
                     </div>
                 </li>
@@ -128,7 +129,7 @@
                                 <ul class="list-unstyled " id="child-list">
                                     @forelse ($childrens as $children)
                                     <li id="hover-effect">
-                                    <a href="{{route('childrenProfile',['id' =>$children->id])}}" class="waves-effect"><img src="{{'img/'.$children->image}}" height="40" width="40">{{$children->first_name}} {{$children->last_name}}</a>
+                                    <a href="{{route('childrenProfile',['id' =>$children->id])}}" class="waves-effect"><img src="{{asset('img/'.$children->image)}}" height="40" width="40">{{$children->first_name}} {{$children->last_name}}</a>
                                     </li>
                                     @empty
                                     @endforelse
@@ -440,6 +441,9 @@
     <!--/.Footer-->
 
     <!-- SCRIPTS -->
+    @yield('script')
+
+
     <!-- JQuery -->
     <script type="text/javascript" src="{{asset('metarial/js/jquery-3.2.1.min.js')}}"></script>
     

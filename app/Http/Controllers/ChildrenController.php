@@ -13,7 +13,7 @@ class ChildrenController extends Controller
         $userId=Auth::user()->id;
         $child=User::find($userId);
         $childrens=$child->childern;
-        $selected=Children::where('id','=',$id)->value('first_name');
+        $selected=Children::where('id','=',$id)->first();
         return view('childrens.profile')->with('childrens',$childrens)->with('selected',$selected);
     }
 }
