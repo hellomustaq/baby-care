@@ -16,6 +16,9 @@ body {
     padding-left: 0;
     padding-right: 0;
 }
+.rounded-circle{
+    margin-left: 40px;
+}
 
 /* Profile container */
 .profile {
@@ -144,9 +147,10 @@ body {
         <div class="col-md-2">
             <div class="profile-sidebar">
                 <!-- SIDEBAR USERPIC -->
-                <div class="profile-userpic">
-                    <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive"
-                        alt="">
+                <div class="row">
+                    <div class="col-xs-7 ">
+                        <img src="//placehold.it/150" class="rounded-circle " />
+                    </div>
                 </div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
