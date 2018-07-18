@@ -163,7 +163,7 @@
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
-                    <button type="button" class="btn btn-success btn-sm">Create</button>
+                    <a href="{{route('childrenProfileEdit',['id' =>$selected->id])}}"><button type="button" class="btn btn-success btn-sm">Edit</button></a>
                     <button type="button" class="btn btn-danger btn-sm">Message</button>
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
@@ -176,9 +176,9 @@
                                 Gellary </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('childrenProfilePost',['id' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-user"></i>
-                                Account Settings </a>
+                                Post </a>
                         </li>
                         <li>
                             <a href="#" target="_blank">

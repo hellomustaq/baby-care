@@ -16,4 +16,21 @@ class ChildrenController extends Controller
         $selected=Children::where('id','=',$id)->first();
         return view('childrens.profile')->with('childrens',$childrens)->with('selected',$selected);
     }
+
+    public function post($id){
+        $userId=Auth::user()->id;
+        $child=User::find($userId);
+        $childrens=$child->childern;
+        $selected=Children::where('id','=',$id)->first();
+        return view('childrens.post')->with('childrens',$childrens)->with('selected',$selected);
+    }
+
+
+    public function edit($id){
+        $userId=Auth::user()->id;
+        $child=User::find($userId);
+        $childrens=$child->childern;
+        $selected=Children::where('id','=',$id)->first();
+        return view('childrens.edit')->with('childrens',$childrens)->with('selected',$selected);
+    }
 }
