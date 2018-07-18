@@ -35,6 +35,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('children/{id}', 'ChildrenController@profile')->name('childrenProfile');
     Route::get('children/{id}/post', 'ChildrenController@post')->name('childrenProfilePost');
     Route::get('children/{id}/edit', 'ChildrenController@edit')->name('childrenProfileEdit');
+    Route::post('children/{id}/edit', 'ChildrenController@update')->name('childrenProfileEdited');
   });
 
 Route::post('/children/add','UserController@insertChildren')->name('insertChildren')->middleware('auth');

@@ -124,7 +124,7 @@
 
     .profile-content {
         padding: 20px;
-        background: #c4efff;
+        /* background: #c4efff; */
         min-height: 460px;
     }
 
@@ -211,8 +211,13 @@
         <div class="col-md-10">
             <div class="profile-content">
                 <section class="child-area">
-                    <form role="form" action="{{url('/children/add')}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('childrenProfileEdited',['id' =>$selected->id])}}" method="post" enctype="multipart/form-data">
                         @csrf 
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                         @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
