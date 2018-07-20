@@ -183,12 +183,12 @@
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a href="{{route('childrenProfile',['id' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Gellary </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="{{route('childrenProfilePost',['id' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Post </a>

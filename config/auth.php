@@ -36,6 +36,11 @@ return [
     */
 
     'guards' => [
+        'caregiver' => [
+            'driver' => 'session',
+            'provider' => 'caregivers',
+        ],
+
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -65,6 +70,11 @@ return [
     */
 
     'providers' => [
+        'caregivers' => [
+            'driver' => 'eloquent',
+            'model' => App\Caregiver::class,
+        ],
+
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
@@ -92,6 +102,12 @@ return [
     */
 
     'passwords' => [
+        'caregivers' => [
+            'provider' => 'caregivers',
+            'table' => 'caregiver_password_resets',
+            'expire' => 60,
+        ],
+
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',

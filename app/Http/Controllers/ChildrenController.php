@@ -44,7 +44,7 @@ class ChildrenController extends Controller
         ]);
 
         if ($validator->fails()) {
-            $initialError="Ohh!! Some field's data missing!!";
+            $initialError="Ohh!! Some field's data missing! Try Again!!";
             $selected=Children::where('id','=',$id)->first();
             return redirect()->back()
                         ->with('selected',$selected)->withErrors($initialError);
