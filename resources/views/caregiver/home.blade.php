@@ -1,4 +1,4 @@
-@extends('caregiver.layout.auth')
+@extends('caregiver.layout.master')
 
 @section('content')
 <div class="container">
