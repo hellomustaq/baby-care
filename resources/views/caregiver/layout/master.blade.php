@@ -247,7 +247,7 @@
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">{{ Auth::user()->name }}</a>
                             @auth
-                            <a class="dropdown-item" href="{{ url('logout') }}">logout</a>
+                            <a class="dropdown-item" href="{{ route('c.logout') }}">logout</a>
                             @endauth
                         </div>
                     </li>

@@ -16,6 +16,22 @@ use App\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix' => 'caregiver'], function () {
+    Route::get('/login', 'CaregiverAuth\LoginController@showLoginForm')->name('login');
+    Route::post('/login', 'CaregiverAuth\LoginController@login');
+    Route::get('/logout', 'CaregiverAuth\LoginController@logout')->name('c.logout');
+    Route::post('/logout', 'CaregiverAuth\LoginController@logout')->name('c.logout');
+  
+    Route::get('/register', 'CaregiverAuth\RegisterController@showRegistrationForm')->name('register');
+    Route::post('/register', 'CaregiverAuth\RegisterController@register');
+  
+    Route::post('/password/email', 'CaregiverAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+    Route::post('/password/reset', 'CaregiverAuth\ResetPasswordController@reset')->name('password.email');
+    Route::get('/password/reset', 'CaregiverAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+    Route::get('/password/reset/{token}', 'CaregiverAuth\ResetPasswordController@showResetForm');
+});
+
+Route::get('/coustom/logout', 'HomeController@logout')->name('coustom.logout');
 
 Route::get('/', function () {
     return view('landing');
@@ -46,16 +62,4 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::POST('regUser','HomeController@regUser')->name('regUser');
 Route::get('/logout', 'HomeController@logout')->name('logout');
 
-Route::group(['prefix' => 'caregiver'], function () {
-  Route::get('/login', 'CaregiverAuth\LoginController@showLoginForm')->name('login');
-  Route::post('/login', 'CaregiverAuth\LoginController@login');
-  Route::post('/logout', 'CaregiverAuth\LoginController@logout')->name('logout');
 
-  Route::get('/register', 'CaregiverAuth\RegisterController@showRegistrationForm')->name('register');
-  Route::post('/register', 'CaregiverAuth\RegisterController@register');
-
-  Route::post('/password/email', 'CaregiverAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
-  Route::post('/password/reset', 'CaregiverAuth\ResetPasswordController@reset')->name('password.email');
-  Route::get('/password/reset', 'CaregiverAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
-  Route::get('/password/reset/{token}', 'CaregiverAuth\ResetPasswordController@showResetForm');
-});
