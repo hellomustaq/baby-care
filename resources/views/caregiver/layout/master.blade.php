@@ -32,7 +32,7 @@
 
         .middle {
             display: inline-block;
-            margin-left: 50%;
+            margin-left: 47%;
             transform: translateX(-50%);
         }
 
@@ -215,21 +215,21 @@
                 </div>
                 <!-- Breadcrumb-->
                 <div class="breadcrumb-dn mr-auto middle">
-                    <a class="navbar-brand" href="#">
-                        <img src="img/logo.png" width="60" height="60" alt="">
+                    <a class="" href="#">
+                        <img src="{{asset('img/logo.png')}}" width="60" height="60" alt="">
                     </a>
                 </div>
                 <ul class="nav navbar-nav nav-flex-icons ml-auto">
-                    <li class="nav-item ">
+                    <!-- <li class="nav-item ">
                         <a style="color:white" class="coustom-padding  nav-link">
                             <i class="fa fa-envelope"></i>
                             <span style="color:white" class="font-weight-bold clearfix d-none d-sm-inline-block">Contact</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a style="color:white" class="coustom-padding nav-link">
                             <i class="fa fa-comments-o"></i>
-                            <span style="color:white" class="font-weight-bold clearfix d-none d-sm-inline-block">Support</span>
+                            <span style="color:white" class="font-weight-bold clearfix d-none d-sm-inline-block">Care Giver</span>
                         </a>
                     </li>
                     <li class="nav-item">

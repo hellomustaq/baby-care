@@ -23,6 +23,11 @@
     @yield('link')
     @yield('style')
     <style>
+        @media (min-width: 600px)
+        .navbar .scrolling-navbar {
+            padding-top: 0!important;
+            padding-bottom: 0!important;
+        }
         @media (max-height: 992px) {
             .side-nav .logo-wrapper,
             .side-nav .logo-wrapper {
@@ -215,7 +220,7 @@
                 </div>
                 <!-- Breadcrumb-->
                 <div class="breadcrumb-dn mr-auto middle">
-                    <a class="navbar-brand" href="#">
+                    <a class="{{-- navbar-brand --}}" href="#">
                         <img src="img/logo.png" width="60" height="60" alt="">
                     </a>
                 </div>
