@@ -96,7 +96,7 @@
             @endif
             <div class="form-group ml-4 mr-4">
                 <label for="token">Token<span class="red-indicator">*</span></label>
-                <input name="token" type="text" class="form-control" id="token">
+                <input name="token" type="text" class="form-control" id="token" required>
             </div>
 
             <div class="form-group ml-4 mr-4">
@@ -105,12 +105,12 @@
 
                     <div class="col-6">
                         <label for="firstName">First Name<span class="red-indicator">*</span></label>
-                        <input value="{{ old('firstName') }}" name="firstName" type="text" class="form-control" id="first" placeholder="First Name">
+                        <input value="{{ old('firstName') }}" name="firstName" type="text" class="form-control" id="first" placeholder="First Name" required >
                     </div>
 
                     <div class="col-6">
                         <label for="lastName">Last Name<span class="red-indicator">*</span></label>
-                        <input value="{{ old('lastName') }}" name="lastName" type="text" class="form-control" id="last" placeholder="Last Name">
+                        <input value="{{ old('lastName') }}" name="lastName" type="text" class="form-control" id="last" placeholder="Last Name" required >
                     </div>
                 </div>
             </div>
@@ -136,13 +136,13 @@
 
             <div class="form-group ml-4 mr-4">
                 <label for="Birthday">Birthday<span class="red-indicator">*</span></label>
-                <input name="birthday" type="date" class="form-control" id="birthday">
+                <input name="birthday" type="date" class="form-control" id="birthday" required >
             </div>
 
 
             <div class="form-group ml-4 mr-4">
                 <label for="image">Profile Image<span class="red-indicator">*</span></label>
-                <input type="file" name="image" class="form-control" id="image">
+                <input type="file" name="image" class="form-control" id="image" required >
                 <h6 style="color:red;">**Maximum file size 5MB</h6>
             </div>
 

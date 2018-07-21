@@ -5,6 +5,7 @@ namespace App;
 use App\Notifications\CaregiverResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Children;
 
 class Caregiver extends Authenticatable
 {
@@ -28,6 +29,8 @@ class Caregiver extends Authenticatable
         'password', 'remember_token',
     ];
 
+    
+
     /**
      * Send the password reset notification.
      *
@@ -37,5 +40,10 @@ class Caregiver extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new CaregiverResetPassword($token));
+    }
+
+    public function childern()
+    {
+        return $this->hasMany('App\Children');
     }
 }

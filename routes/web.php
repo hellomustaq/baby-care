@@ -31,7 +31,6 @@ Route::group(['prefix' => 'caregiver'], function () {
     Route::get('/password/reset/{token}', 'CaregiverAuth\ResetPasswordController@showResetForm');
 });
 
-Route::get('/coustom/logout', 'HomeController@logout')->name('coustom.logout');
 
 Route::get('/', function () {
     return view('landing');

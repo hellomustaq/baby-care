@@ -4,6 +4,11 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use View;
+use Auth;
+use App\User;
+use App\Caregiver;
+use App\Children;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,6 +20,23 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        view()->composer('layouts.master', function($view) {
+            $userId=Auth::user()->id;
+            $child=User::find($userId);
+            $childrens=$child->childern;
+            $view->with('childrens',$childrens);
+        });
+
+        view()->composer('caregiver.layout.master', function($view) {
+            $userId=Auth::user()->id;
+            $caregiver=Caregiver::find($userId);
+            $childrens=Children::where('caregiver_id','=',$userId)->get();
+            //$childrens=$caregiver->children;
+            // dd($childrens);
+            return $view->with('childrens',$childrens);
+        });
+
     }
 
     /**

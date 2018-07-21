@@ -13,6 +13,9 @@
     }
 
     .rounded-circle {
+       /* margin-left: 40px;*/
+    }
+    .profile-img {
         margin-left: 40px;
     }
 
@@ -147,7 +150,7 @@
                 <!-- SIDEBAR USERPIC -->
                 <div class="row">
                     <div class="col-xs-7 ">
-                        <img src="{{asset('img/'.$selected->image)}}" class="rounded-circle img-responsive" height="150" width="150" />
+                        <img src="{{asset('img/'.$selected->image)}}" class="profile-img rounded-circle img-responsive" height="150" width="150" />
                     </div>
                 </div>
                 <!-- END SIDEBAR USERPIC -->

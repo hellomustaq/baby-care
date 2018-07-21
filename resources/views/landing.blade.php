@@ -40,7 +40,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ourNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="#" class="navbar-brand">
+                <a href="#" class="">
                     <img src="img/logo.png" alt="logo" title="logo" />
                 </a>
 

@@ -11,28 +11,23 @@ use Validator;
 class ChildrenController extends Controller
 {
     public function profile($id){
-        $userId=Auth::user()->id;
-        $child=User::find($userId);
-        $childrens=$child->childern;
         $selected=Children::where('id','=',$id)->first();
-        return view('childrens.profile')->with('childrens',$childrens)->with('selected',$selected);
+        return view('childrens.profile')->with('selected',$selected);
     }
 
+
+
+    //post() is landing page of children profile 
+
     public function post($id){
-        $userId=Auth::user()->id;
-        $child=User::find($userId);
-        $childrens=$child->childern;
         $selected=Children::where('id','=',$id)->first();
-        return view('childrens.post')->with('childrens',$childrens)->with('selected',$selected);
+        return view('childrens.post')->with('selected',$selected);
     }
 
 
     public function edit($id){
-        $userId=Auth::user()->id;
-        $child=User::find($userId);
-        $childrens=$child->childern;
         $selected=Children::where('id','=',$id)->first();
-        return view('childrens.edit')->with('childrens',$childrens)->with('selected',$selected);
+        return view('childrens.edit')->with('selected',$selected);
     }
     public function update(Request $request, $id){
         $validator =Validator::make($request->all(), [
