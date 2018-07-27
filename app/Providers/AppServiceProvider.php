@@ -29,7 +29,11 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('caregiver.layout.master', function($view) {
-            $userId=Auth::user()->id;
+            if (Auth::guard('caregiver')->check()) {
+                $userId=Auth::guard('caregiver')->user()->id;
+            }else{
+                die('not log in as care giver');
+            }
             $caregiver=Caregiver::find($userId);
             $childrens=Children::where('caregiver_id','=',$userId)->get();
             //$childrens=$caregiver->children;

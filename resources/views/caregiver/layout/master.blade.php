@@ -122,14 +122,14 @@
                     <ul class="collapsible collapsible-accordion">
                         <li >
                             <a class="collapsible-header waves-effect arrow-r">
-                                <i class="fa fa-chevron-right"></i> {{ Auth::user()->name }}
+                                <i class="fa fa-chevron-right"></i> {{ Auth::guard('caregiver')->user()->name }}
                                 <i class="fa fa-angle-down rotate-icon"></i>
                             </a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled " id="child-list">
                                     @forelse ($childrens as $children)
                                     <li id="hover-effect">
-                                    <a href="{{route('c.childrenProfile',['id' =>$children->id])}}" class="waves-effect"><img class="rounded-circle" src="{{asset('img/'.$children->image)}}" height="40" width="40"> {{$children->first_name}} {{$children->last_name}}</a>
+                                    <a href="{{route('c.childrenProfile',['cid' =>$children->id])}}" class="waves-effect"><img class="rounded-circle" src="{{asset('img/'.$children->image)}}" height="40" width="40"> {{$children->first_name}} {{$children->last_name}}</a>
                                     </li>
                                     @empty
                                     @endforelse
@@ -243,7 +243,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">{{ Auth::user()->name }}</a>
+                            <a class="dropdown-item" href="#">{{ Auth::guard('caregiver')->user()->name }}</a>
                             @auth
                             <a class="dropdown-item" href="{{ route('c.logout') }}">logout</a>
                             @endauth
