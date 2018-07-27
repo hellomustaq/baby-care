@@ -244,9 +244,9 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">{{ Auth::guard('caregiver')->user()->name }}</a>
-                            @auth
+                            @if(Auth::guard('caregiver')->check())
                             <a class="dropdown-item" href="{{ route('c.logout') }}">logout</a>
-                            @endauth
+                            @endif
                         </div>
                     </li>
                 </ul>

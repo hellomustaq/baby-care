@@ -127,7 +127,6 @@
 
     .profile-content {
         padding: 20px;
-        background: #c4efff;
         min-height: 460px;
     }
 
@@ -173,13 +172,13 @@
                         {{$selected->first_name}}
                     </div>
                     <div class="profile-usertitle-job">
-                        Developer
+                        Student
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
-                    <a href="{{route('childrenProfileEdit',['id' =>$selected->id])}}"><button type="button" class="btn btn-success btn-sm">Edit</button></a>
+                    <a href="{{-- {{route('childrenProfileEdit',['id' =>$selected->id])}} --}}"><button type="button" class="btn btn-success btn-sm">Edit</button></a>
                     <button type="button" class="btn btn-danger btn-sm">Message</button>
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
@@ -187,12 +186,12 @@
                 <div class="profile-usermenu">
                     <ul class="nav">
                         <li>
-                            <a href="{{route('childrenProfile',['id' =>$selected->id])}}">
+                            <a href="{{-- {{route('childrenProfile',['id' =>$selected->id])}} --}}">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Gellary </a>
                         </li>
                         <li class="active">
-                            <a href="{{route('childrenProfilePost',['id' =>$selected->id])}}">
+                            <a href="{{-- {{route('childrenProfilePost',['id' =>$selected->id])}} --}}">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Post </a>
                         </li>
@@ -213,38 +212,52 @@
         </div>
         <div class="col-md-10">
             <div class="profile-content">
-                <div class="card-deck">
-                    <div class="card">
-                      <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                <div class="row my-4">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-3 col-sm d-flex card m-4 ">
+                          <div class="card-body flex-fill"><br><br><br><br>
+                            <i class="fa fa-plus-circle fa-5x"></i>
+                          </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm d-flex card m-4">
+                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
+                          <div class="card-body flex-fill">
+                          {!! \Illuminate\Support\Str::words('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 15,'....')  !!}
+                          </div>
+                          <div class="card-footer" style="background-color: white;">
+                            <small class=""><a class="btn btn-primary" href="">READ</a></small>
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-3 col-sm d-flex card m-4">
+                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
+                          <div class="card-body flex-fill">
+                          {!! \Illuminate\Support\Str::words('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 15,'....')  !!}
+                          </div>
+                          <div class="card-footer" style="background-color: white;">
+                            <small class=""><a class="btn btn-primary" href="">READ</a></small>
+                          </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm d-flex card m-4">
+                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
+                          <div class="card-body flex-fill">
+                          {!! \Illuminate\Support\Str::words('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 15,'....')  !!}
+                          </div>
+                          <div class="card-footer" style="background-color: white;">
+                            <small class=""><a class="btn btn-primary" href="">READ</a></small>
+                          </div>
+                        </div>
+                        
                       </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-            </div>
+                </div>
             </div>
         </div>
     </div>

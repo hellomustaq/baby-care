@@ -31,14 +31,15 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('caregiver.layout.master', function($view) {
             if (Auth::guard('caregiver')->check()) {
                 $userId=Auth::guard('caregiver')->user()->id;
+                $caregiver=Caregiver::find($userId);
+                $childrens=Children::where('caregiver_id','=',$userId)->get();
+                //$childrens=$caregiver->children;
+                // dd($childrens);
+                return $view->with('childrens',$childrens);
             }else{
-                die('not log in as care giver');
+                die('OOPS! You hit invalid URL!! Sign in first.');
             }
-            $caregiver=Caregiver::find($userId);
-            $childrens=Children::where('caregiver_id','=',$userId)->get();
-            //$childrens=$caregiver->children;
-            // dd($childrens);
-            return $view->with('childrens',$childrens);
+            
         });
 
     }
