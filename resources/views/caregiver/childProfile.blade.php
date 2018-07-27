@@ -196,7 +196,7 @@
                                 Post </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="#" target="">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Tasks </a>
                         </li>
