@@ -29,6 +29,7 @@ Route::group(['prefix' => 'caregiver'], function () {
     Route::post('/password/reset', 'CaregiverAuth\ResetPasswordController@reset')->name('password.email');
     Route::get('/password/reset', 'CaregiverAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
     Route::get('/password/reset/{token}', 'CaregiverAuth\ResetPasswordController@showResetForm');
+    Route::get('children/{id}','CaregiverController@childrenProfile')->name('c.childrenProfile');
 });
 
 
