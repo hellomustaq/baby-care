@@ -31,6 +31,10 @@ Route::group(['prefix' => 'caregiver'], function () {
     Route::get('/password/reset/{token}', 'CaregiverAuth\ResetPasswordController@showResetForm');
     
     Route::get('/children/{cid}','CaregiverController@childrenProfile')->name('c.childrenProfile');
+    Route::get('/children/gellary/{cid}','CaregiverController@childrenGellary')->name('c.childrenGellary');
+    Route::get('/createPostForm/{id}','CaregiverController@createPostForm')->name('createPostForm');
+    Route::post('/children/post/add','CaregiverController@createPost')->name('createPost');
+    Route::get('/children/Post/{id}/{cid}','CaregiverController@singlePost')->name('singlePost');  
 });
 
 
@@ -53,6 +57,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('children/{id}/post', 'ChildrenController@post')->name('childrenProfilePost');
     Route::get('children/{id}/edit', 'ChildrenController@edit')->name('childrenProfileEdit');
     Route::post('children/{id}/edit', 'ChildrenController@update')->name('childrenProfileEdited');
+    Route::get('/children/Post/{id}/{cid}','ChildrenController@singlePost')->name('singlePostForUser');
   });
 
 Route::post('/children/add','UserController@insertChildren')->name('insertChildren')->middleware('auth');

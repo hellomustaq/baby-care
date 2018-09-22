@@ -10,7 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
 
     <!-- Scripts -->
     
@@ -227,8 +227,7 @@
                 <ul class="nav navbar-nav nav-flex-icons ml-auto">
                     <li class="nav-item ">
                         <a style="color:white" class="coustom-padding  nav-link">
-                            <i class="fa fa-envelope"></i>
-                            <span style="color:white" class="font-weight-bold clearfix d-none d-sm-inline-block">Contact</span>
+                            <span style="color:white" class="font-weight-bold clearfix d-none d-sm-inline-block"> <i class="fa fa-info"><span class="badge badge-danger lead">1</span></i></span>
                         </a>
                     </li>
                     <li class="nav-item">

@@ -18,4 +18,8 @@ class Children extends Model
     public function caregiver(){
         return $this->belongsTo('App\Caregiver');
     }
+
+    public function posts(){
+        return $this->hasMany('App\Post');
+    }
 }

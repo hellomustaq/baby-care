@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,7 +14,7 @@ class AddCaregiverIdToChildrens extends Migration
     public function up()
     {
         Schema::table('childrens', function($table) {
-        $table->integer('caregiver_id');
+        $table->integer('caregiver_id')->default('1');
         });
 
     }

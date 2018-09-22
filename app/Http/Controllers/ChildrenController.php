@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Children;
+use App\Post;
 use Auth;
 use Validator;
 
@@ -12,7 +13,8 @@ class ChildrenController extends Controller
 {
     public function profile($id){
         $selected=Children::where('id','=',$id)->first();
-        return view('childrens.profile')->with('selected',$selected);
+        $posts=Post::where('children_id','=',$id)->get();
+        return view('childrens.profile')->with('selected',$selected)->with('posts',$posts);
     }
 
 
@@ -21,7 +23,12 @@ class ChildrenController extends Controller
 
     public function post($id){
         $selected=Children::where('id','=',$id)->first();
-        return view('childrens.post')->with('selected',$selected);
+        $posts=Post::where('children_id','=',$id)->get();
+        return view('childrens.post')->with([
+            'selected'=>$selected,
+            'posts'=>$posts,
+            ]);
+
     }
 
 
@@ -29,6 +36,15 @@ class ChildrenController extends Controller
         $selected=Children::where('id','=',$id)->first();
         return view('childrens.edit')->with('selected',$selected);
     }
+
+    public function singlePost($id,$cid){
+		$selected=Children::where('id','=',$cid)->first();
+		$post=Post::where('id','=',$id)->first();
+		return view('childrens.singlePost')->with('selected',$selected)->with('post',$post);
+	}
+
+    
+
     public function update(Request $request, $id){
         $validator =Validator::make($request->all(), [
             'firstName' => 'required',

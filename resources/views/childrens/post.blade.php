@@ -212,40 +212,21 @@
             </div>
         </div>
         <div class="col-md-10">
-            <div class="profile-content">
-                <div class="card-deck">
-                    <div class="card">
-                      <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
+        
+            <div class="row">
+            @foreach($posts as $post)
+            <div class="col-md-3 col-sm d-flex card m-4">
+                <img class="card-img-top" src="{{asset('img/postImage/'. $post->image)}}" alt="Card image cap">
+                <div class="card-body flex-fill">
+                {!! \Illuminate\Support\Str::words($post->body, 15,'....')  !!}
+                </div>
+                <div class="card-footer" style="background-color: white;">
+                <small class=""><a class="btn btn-primary" href="{{route('singlePostForUser',['id' =>$post->id,'cid'=>$selected->id])}}">READ</a></small>
+                </div>
             </div>
+            @endforeach
             </div>
+        
         </div>
     </div>
 </div>

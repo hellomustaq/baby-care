@@ -1,6 +1,5 @@
 @extends('layouts.master')
  @section('link')
- <link href="{{asset('css/gellary.css')}}" rel="stylesheet"> @endsection @section('style')
  @endsection 
  
  @section('style')
@@ -17,6 +16,9 @@
     }
 
     .rounded-circle {
+        /*margin-left: 40px;*/
+    }
+    .profile-img {
         margin-left: 40px;
     }
 
@@ -125,7 +127,6 @@
 
     .profile-content {
         padding: 20px;
-        background: #c4efff;
         min-height: 460px;
     }
 
@@ -161,7 +162,7 @@
                 <!-- SIDEBAR USERPIC -->
                 <div class="row">
                     <div class="col-xs-7 ">
-                        <img src="{{asset('img/'.$selected->image)}}" class="rounded-circle img-responsive" height="150" width="150" />
+                        <img src="{{asset('img/'.$selected->image)}}" class="profile-img rounded-circle img-responsive" height="150" width="150" />
                     </div>
                 </div>
                 <!-- END SIDEBAR USERPIC -->
@@ -171,31 +172,31 @@
                         {{$selected->first_name}}
                     </div>
                     <div class="profile-usertitle-job">
-                        Developer
+                        Student
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
-                    <button type="button" class="btn btn-success btn-sm">Create</button>
+                    <a href="{{-- {{route('childrenProfileEdit',['id' =>$selected->id])}} --}}"><button type="button" class="btn btn-success btn-sm">Edit</button></a>
                     <button type="button" class="btn btn-danger btn-sm">Message</button>
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a href="{{route('childrenProfile',['id' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Gellary </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="{{route('childrenProfilePost',['id' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Post </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="#" target="">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Tasks </a>
                         </li>
@@ -211,9 +212,27 @@
         </div>
         <div class="col-md-10">
             <div class="profile-content">
-                @yield('contentForChild')
-            </div>
+
+                <div class="row my-4">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                            <h2 style="background-color:lightgray;">{{$post->title}}</h2>
+                            <div style="background-color:lightgray;"><img height="280" width="500" src="{{asset('img/postImage/'.$post->image)}}" alt=""></div>
+                            <div>
+                                <br>
+                                <p style="background-color:lightgray;"><br>{{$post->body}}<br><br></p>
+                            </div>
+
+
+                            </div>
+                            <div class="col-md-2"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+        `   </div>
         </div>
-    </div>
 </div>
 <br> @endsection

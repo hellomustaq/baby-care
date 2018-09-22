@@ -1,4 +1,4 @@
-@extends('layouts.master') @section('link')
+@extends('caregiver.layout.master') @section('link')
 <link href="{{asset('css/gellary.css')}}" rel="stylesheet"> @endsection @section('style')
 <style>
     body {
@@ -160,7 +160,7 @@
                         {{$selected->first_name}}
                     </div>
                     <div class="profile-usertitle-job">
-                        Developer
+                        O +ve
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
@@ -174,12 +174,12 @@
                 <div class="profile-usermenu">
                     <ul class="nav">
                         <li class="active">
-                            <a href="{{route('childrenProfile',['id' =>$selected->id])}}">
+                            <a href="{{route('c.childrenGellary',['cid' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Gellary </a>
                         </li>
                         <li>
-                            <a href="{{route('childrenProfilePost',['id' =>$selected->id])}}">
+                            <a href="{{route('c.childrenProfile',['cid' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Post </a>
                         </li>

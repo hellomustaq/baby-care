@@ -186,12 +186,12 @@
                 <div class="profile-usermenu">
                     <ul class="nav">
                         <li>
-                            <a href="{{-- {{route('childrenProfile',['id' =>$selected->id])}} --}}">
+                            <a href="{{route('c.childrenGellary',['cid' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Gellary </a>
                         </li>
                         <li class="active">
-                            <a href="{{-- {{route('childrenProfilePost',['id' =>$selected->id])}} --}}">
+                            <a href="{{route('c.childrenProfile',['cid' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Post </a>
                         </li>
@@ -218,44 +218,22 @@
                     <div class="row">
                         <div class="col-md-3 col-sm d-flex card m-4 ">
                           <div class="card-body flex-fill"><br><br><br><br>
-                            <i class="fa fa-plus-circle fa-5x"></i>
+                            <a href="{{route('createPostForm',['id' =>$selected->id])}}"><i class="fa fa-plus-circle fa-5x"></i></a>
                           </div>
                         </div>
 
+                        @foreach($posts as $post)
                         <div class="col-md-3 col-sm d-flex card m-4">
-                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
+                          <img class="card-img-top" src="{{asset('img/postImage/'. $post->image)}}" alt="Card image cap">
                           <div class="card-body flex-fill">
-                          {!! \Illuminate\Support\Str::words('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 15,'....')  !!}
+                          {!! \Illuminate\Support\Str::words($post->body, 15,'....')  !!}
                           </div>
                           <div class="card-footer" style="background-color: white;">
-                            <small class=""><a class="btn btn-primary" href="">READ</a></small>
+                            <small class=""><a class="btn btn-primary" href="{{route('singlePost',['id' =>$post->id,'cid'=>$selected->id])}}">READ</a></small>
                           </div>
                         </div>
+                        @endforeach
 
-
-                        <div class="col-md-3 col-sm d-flex card m-4">
-                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                          <div class="card-body flex-fill">
-                          {!! \Illuminate\Support\Str::words('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 15,'....')  !!}
-                          </div>
-                          <div class="card-footer" style="background-color: white;">
-                            <small class=""><a class="btn btn-primary" href="">READ</a></small>
-                          </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm d-flex card m-4">
-                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                          <div class="card-body flex-fill">
-                          {!! \Illuminate\Support\Str::words('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 15,'....')  !!}
-                          </div>
-                          <div class="card-footer" style="background-color: white;">
-                            <small class=""><a class="btn btn-primary" href="">READ</a></small>
-                          </div>
-                        </div>
-                        
                       </div>
                 </div>
             </div>

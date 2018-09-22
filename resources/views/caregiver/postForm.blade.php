@@ -1,6 +1,5 @@
-@extends('layouts.master')
+@extends('caregiver.layout.master')
  @section('link')
- <link href="{{asset('css/gellary.css')}}" rel="stylesheet"> @endsection @section('style')
  @endsection 
  
  @section('style')
@@ -17,6 +16,9 @@
     }
 
     .rounded-circle {
+        /*margin-left: 40px;*/
+    }
+    .profile-img {
         margin-left: 40px;
     }
 
@@ -125,7 +127,6 @@
 
     .profile-content {
         padding: 20px;
-        background: #c4efff;
         min-height: 460px;
     }
 
@@ -161,7 +162,7 @@
                 <!-- SIDEBAR USERPIC -->
                 <div class="row">
                     <div class="col-xs-7 ">
-                        <img src="{{asset('img/'.$selected->image)}}" class="rounded-circle img-responsive" height="150" width="150" />
+                        <img src="{{asset('img/'.$selected->image)}}" class="profile-img rounded-circle img-responsive" height="150" width="150" />
                     </div>
                 </div>
                 <!-- END SIDEBAR USERPIC -->
@@ -171,31 +172,31 @@
                         {{$selected->first_name}}
                     </div>
                     <div class="profile-usertitle-job">
-                        Developer
+                        Student
                     </div>
                 </div>
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
-                    <button type="button" class="btn btn-success btn-sm">Create</button>
+                    <a href="{{-- {{route('childrenProfileEdit',['id' =>$selected->id])}} --}}"><button type="button" class="btn btn-success btn-sm">Edit</button></a>
                     <button type="button" class="btn btn-danger btn-sm">Message</button>
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
-                            <a href="{{route('childrenProfile',['id' =>$selected->id])}}">
+                        <li>
+                            <a href="{{route('c.childrenGellary',['cid' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Gellary </a>
                         </li>
-                        <li>
-                            <a href="{{route('childrenProfilePost',['id' =>$selected->id])}}">
+                        <li class="active">
+                            <a href="{{route('c.childrenProfile',['cid' =>$selected->id])}}">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Post </a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">
+                            <a href="#" target="">
                                 <i class="glyphicon glyphicon-ok"></i>
                                 Tasks </a>
                         </li>
@@ -211,9 +212,51 @@
         </div>
         <div class="col-md-10">
             <div class="profile-content">
-                @yield('contentForChild')
+
+                <div class="row my-4">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                            <section class="child-area">
+        <form role="form" action="{{url('caregiver/children/post/add')}}" method="post" enctype="multipart/form-data">
+            @csrf 
+            @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+            @endif
+            <input name="childrenId" type="hidden" class="form-control" id="childrenId" value="{{$selected->id}}">
+            <div class="form-group ml-4 mr-4">
+                <label for="title">Title<span class="red-indicator">*</span></label>
+                <input name="title" type="text" class="form-control" id="title" required>
             </div>
+
+            <div class="form-group ml-4 mr-4">
+                <label for="postBody">Body<span class="red-indicator">*</span></label>
+                <textarea name="postBody" rows="6" type="textarea" class="form-control"id="mytextarea" ></textarea>
+            </div>
+
+            <div class="form-group ml-4 mr-4">
+                <label for="postImage">Profile Image<span class="red-indicator">*</span></label>
+                <input type="file" name="postImage" class="form-control" id="postImage" >
+                <h6 style="color:red;">**Maximum file size 5MB</h6>
+            </div>
+            <button type="submit" style="background-color:#2DAE60;" class="btn">
+                <i class="fa fa-plus"></i> POST </button>
+        </form>
+    </section>  
+                            </div>
+                            <div class="col-md-2"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+        `   </div>
         </div>
-    </div>
 </div>
 <br> @endsection

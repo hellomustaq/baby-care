@@ -10,8 +10,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
+    
     <!-- Scripts -->
     
 
@@ -463,6 +464,13 @@
 
         new WOW().init();
     </script>
+    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+    <script>
+  tinymce.init({
+    selector: '#mytextarea'
+  });
+  </script>
+
 
 </body>
 
