@@ -33,7 +33,7 @@ class HomeController extends Controller
         // foreach ($childrens as $key) {
         //     echo $key->first_name;
         // }die;
-        return view('layouts.master')->with('childrens',$childrens);
+        return view('home')->with('childrens',$childrens);
     }
 
     public function regUser(Request $request){

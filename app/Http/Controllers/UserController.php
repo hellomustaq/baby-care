@@ -79,11 +79,9 @@ class UserController extends Controller
                         ->withInput($request->all())->withErrors($initialError);
             }
         }
+    }
 
-        
-
-
-        
-
+    public function live(){
+        return view('live');
     }
 }

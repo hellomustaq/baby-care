@@ -146,16 +146,16 @@
                         </li>
                         <li>
                             <a class="collapsible-header waves-effect arrow-r">
-                                <i class="fa fa-hand-pointer-o"></i> Instruction
+                                <i class="fa fa-hand-pointer-o"></i> Video
                                 <i class="fa fa-angle-down rotate-icon"></i>
                             </a>
                             <div class="collapsible-body">
                                 <ul class="list-unstyled">
                                     <li id="hover-effect">
-                                        <a href="#" class="waves-effect">For bloggers</a>
+                                        <a href="{{route('liveRoom')}}" class="waves-effect">Live Room</a>
                                     </li>
                                     <li id="hover-effect">
-                                        <a href="#" class="waves-effect">For authors</a>
+                                        <a href="#" class="waves-effect">Saved Video</a>
                                     </li>
                                 </ul>
                             </div>
@@ -268,39 +268,7 @@
 
         <div class="container-fluid text-center">
             @yield('content')
-            <div class="row"><p></p></div>
-                <div class="card-deck">
-                        <div class="card">
-                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          </div>
-                          <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                          </div>
-                          <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <img class="card-img-top" src="{{asset('metarial/img/2.jpg')}}" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                          </div>
-                          <div class="card-footer">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                          </div>
-                        </div>
-                </div>
+</div>
 
         </div>
 

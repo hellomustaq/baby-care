@@ -227,8 +227,8 @@
                     <figure>
                         <img src="{{asset('img/postImage/'.$post->image)}}"
                             alt="" />
-                        <figcaption>Yellowstone National Park
-                            <small>United States</small>
+                        <figcaption>KID'S CASTLE
+                            <small>BANGLADESH</small>
                         </figcaption>
                     </figure>
                     @endforeach

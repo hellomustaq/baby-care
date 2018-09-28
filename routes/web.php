@@ -65,7 +65,27 @@ Route::post('/children/add','UserController@insertChildren')->name('insertChildr
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/video/live', 'UserController@live')->name('liveRoom')->middleware('auth');
 Route::POST('regUser','HomeController@regUser')->name('regUser');
 Route::get('/logout', 'HomeController@logout')->name('logout');
 
 
+
+Route::group(['prefix' => 'admin'], function () {
+  Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('a.login');
+  Route::post('/login', 'AdminAuth\LoginController@login');
+  Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
+  Route::get('/logout', 'AdminAuth\LoginController@logout')->name('logout');
+
+//   Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
+//   Route::post('/register', 'AdminAuth\RegisterController@register');
+
+  Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
+  Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
+
+  Route::get('/childlist','AdminController@childList')->name('a.childList');
+  Route::get('/caregiverlist','AdminController@caregiverList')->name('a.caregiverList');
+  Route::get('/tokenList','AdminController@token')->name('a.token');
+});
